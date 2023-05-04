@@ -1,5 +1,5 @@
 {
-	"name": "@branch/optionify",
+	"name": "trpc-layout",
 	"license": "MIT",
 	"version": "0.0.3",
 	"main": "dist/index.js",

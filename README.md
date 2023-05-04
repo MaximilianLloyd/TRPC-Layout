@@ -2,38 +2,41 @@
 
 Resolve TRPC queries to JSX. Stop littering your project with isSuccess, isLoading and isError.
 
-
 Turn this:
 
 ```tsx
-const users = [
-  {
-    name: "John",
-    id: 3,
-  },
-];
+const { data, isSuccess, isError, isLoading } = api.example.hello.useQuery();
 
-const options = users.map((user) => ({
-  label: user.name,
-  value: user.id,
-}));
+if (isLoading) {
+  return <Loading />;
+}
 
-return <Select options={options} />;
+if (isError) {
+  return <div>Something happened</div>;
+}
+
+if (isSuccess) {
+  return <div>{data.name}</div>;
+}
+
+return null;
 ```
 
 Into this:
 
 ```tsx
-import { optionify } from '@branch/optionify'
+import { TRPCLayout } from "trpc-layout";
 
-const users = [
-  {
-    name: "John",
-    id: 3,
+const query = api.example.hello.useQuery();
+
+// Data and error are inferred from the query
+return TRPCLayout(query, {
+  success(data) {
+    return <div>{data.shippingLine?.name}</div>;
   },
-];
-
-const options = optionify(users, "name", "id");
-
-return <Select options={options} />;
+  error(error) {
+    return <div>{error.message}</div>;
+  },
+  loading: <Loading />,
+});
 ```

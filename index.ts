@@ -14,6 +14,7 @@ export function TRPCLayout<TData, TError>(
     return options.error(query.error);
   }
 
+
   if (query.isSuccess && options.success) {
       return options.success(query.data);
   }
