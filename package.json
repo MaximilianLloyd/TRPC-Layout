@@ -11,7 +11,7 @@
   },
 	"scripts": {
 		"build": "tsup index.ts --format cjs,esm --dts",
-		"release": "pnpm run test && pnpm run build && changeset publish",
+		"release": "pnpm run build && changeset publish",
 		"lint": "tsc"
 	},
 	"devDependencies": {
