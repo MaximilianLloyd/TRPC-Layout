@@ -6,6 +6,7 @@ type TRPCLayoutOptions<TData, TError> = {
   loading?: JSX.Element;
 }
 
+
 export function TRPCLayout<TData, TError>(
   query: UseTRPCQueryResult<TData, TError>,
   options: TRPCLayoutOptions<TData, TError>
