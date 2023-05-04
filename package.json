@@ -1,0 +1,30 @@
+{
+	"name": "@branch/optionify",
+	"license": "MIT",
+	"version": "0.0.3",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/MaximilianLloyd/TRPC-layout.git"
+  },
+	"scripts": {
+		"build": "tsup index.ts --format cjs,esm --dts",
+		"release": "pnpm run test && pnpm run build && changeset publish",
+		"lint": "tsc"
+	},
+	"devDependencies": {
+		"@changesets/cli": "^2.26.1",
+		"@types/react": "^18.2.5",
+		"tsup": "^6.7.0",
+		"typescript": "^5.0.4"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@trpc/react-query": "^10.25.0",
+		"react": "^18.2.0"
+	}
+}
