@@ -46,7 +46,7 @@ const query = api.example.hello.useQuery();
 // Data and error are inferred from the query
 return TRPCLayout(query, {
   success(data) {
-    return <div>{data.shippingLine?.name}</div>;
+    return <div>{data.name}</div>;
   },
   error(error) {
     return <div>{error.message}</div>;
