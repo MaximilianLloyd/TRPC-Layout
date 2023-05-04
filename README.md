@@ -2,6 +2,20 @@
 
 Resolve TRPC queries to JSX. Stop littering your project with isSuccess, isLoading and isError.
 
+
+## Installation
+
+```sh
+$ npm i trpc-layout
+# or
+$ pnpm add trpc-layout
+# or
+$ yarn add trpc-layout
+```
+
+
+## Example
+
 Turn this:
 
 ```tsx
